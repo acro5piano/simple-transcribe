@@ -16,5 +16,10 @@ dependencies = [
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[dependency-groups]
+dev = [
+    "pyright>=1.1.408",
+]
+
 [project.scripts]
 simple-transcribe = "simple_transcribe.main:main_cli"
