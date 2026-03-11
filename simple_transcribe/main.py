@@ -54,7 +54,8 @@ def record() -> list[Path]:
         if status:
             print(status, file=sys.stderr)
         audio_frames.append(indata.copy())
-        rms = np.sqrt(max(0, np.mean(indata**2)))
+        normalized = indata.astype(np.float32) / 32768.0
+        rms = np.sqrt(max(0, np.mean(normalized**2)))
         db = 20 * np.log10(rms) if rms > 0 else -60
         bar = "#" * max(0, int((db + 60) / 2))
         print(f"\r  {bar:<30}", end="", flush=True)
