@@ -1,0 +1,25 @@
+[project]
+name = "simple-transcribe"
+version = "0.1.0"
+description = "A dead simple speech to text using gpt-4o-transcribe"
+requires-python = ">=3.12"
+dependencies = [
+    "notify-py>=0.3.43",
+    "numpy>=2.4.3",
+    "openai>=2.26.0",
+    "scipy>=1.17.1",
+    "sounddevice>=0.5.5",
+    "typer>=0.24.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.408",
+]
+
+[project.scripts]
+simple-transcribe = "simple_transcribe.main:main_cli"
