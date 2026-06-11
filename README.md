@@ -2,7 +2,9 @@
 
 A dead simple speech to text using gpt-4o-transcribe.
 
-Records audio from your microphone, sends it to OpenAI's Whisper API, and copies the transcription to your clipboard.
+Records audio from your microphone, sends it to OpenAI's API, and copies the transcription to your clipboard.
+
+For Wayland (on Linux), transcribed text will be copied to the clipboard via `wl-copy`.
 
 ## Requirements
 
